@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto';
 import { Content } from './content';
 
 export interface NotificationProps {
@@ -9,10 +10,16 @@ export interface NotificationProps {
 }
 
 export class Notification {
+  private _id: string;
   private props: NotificationProps;
 
   constructor(props: NotificationProps) {
+    this._id = randomUUID();
     this.props = props;
+  }
+
+  public get id() {
+    return this._id;
   }
 
   public set recipientId(recipientId: string) {

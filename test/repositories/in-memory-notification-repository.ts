@@ -13,6 +13,12 @@ export class InMemoryNotificationRepository implements NotificationRepository {
     return notification ?? null;
   }
 
+  async countByRecipientId(recipientId: string): Promise<number> {
+    return this.notifications.filter(
+      (notification) => notification.recipientId === recipientId,
+    ).length;
+  }
+
   async create(notification: Notification) {
     this.notifications.push(notification);
   }

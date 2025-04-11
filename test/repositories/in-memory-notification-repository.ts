@@ -5,7 +5,25 @@ import { NotificationRepository } from 'src/app/repositories/notification-reposi
 export class InMemoryNotificationRepository implements NotificationRepository {
   public notifications: Notification[] = [];
 
+  async findById(notificationId: string): Promise<Notification | null> {
+    const notification = this.notifications.find(
+      (notification) => notification.id === notificationId,
+    );
+
+    return notification ?? null;
+  }
+
   async create(notification: Notification) {
     this.notifications.push(notification);
+  }
+
+  async update(notification: Notification): Promise<void> {
+    const notificationIndex = this.notifications.findIndex(
+      (item) => item.id === notification.id,
+    );
+
+    if (notificationIndex > 0) {
+      this.notifications[notificationIndex] = notification;
+    }
   }
 }

@@ -1,4 +1,4 @@
-<h1 align="center">Notifications API developed with TypeScript, Node.js and NestJS</h1>
+<h1 align="center">Notifications API service</h1>
 
 <h3 align="center"> 
 	Status: finished :heavy_check_mark:
@@ -15,7 +15,7 @@
 
 ## 🚀 About
 
-This API was built using **TypeScript**, **Node.js**, **NestJS**, **Prisma ORM** and **SQLite**, which simulates a Notification service that is able to create, update, read, unread, cancel, count and retrieve notifications. 
+This API was built using **TypeScript**, **Node.js**, **NestJS**, **Prisma ORM**, **Jest** and **SQLite**, which simulates a Notifications service that is able to create, update, read, unread, cancel, count and retrieve notifications. 
 
 ## 🗺️ Routes
 
@@ -47,6 +47,7 @@ The project was developed using this technologies:
 - Node.js
 - NestJS
 - Prisma ORM
+- Jest
 - SQLite
 
 ## ⚙ How to Use
